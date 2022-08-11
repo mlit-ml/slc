@@ -15,8 +15,7 @@
           "name": "BHJ Løkken"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 2,
@@ -35,15 +34,14 @@
         }
       },
       {
-        "sampleId": 1,
+        "sampleId": 2,
         "type": "Drikkevandskontrol",
         "label": "Gruppe A",
         "place": {
           "name": "3. Ingstrup Sø landvindingslaug"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 3,
@@ -61,8 +59,7 @@
           "name": "Hæstrup VV, Filterskyllevand"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 4,
@@ -120,8 +117,7 @@
           "name": "Carlsberg: Ugentlig M/U smag START"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 5,
@@ -139,8 +135,7 @@
           "name": "DanHatch Rugerivej 26 DGU 9.699"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 6,
@@ -158,8 +153,7 @@
           "name": "DanHatch Rugerivej 26, 9760 Vrå"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 7,
@@ -177,8 +171,7 @@
           "name": "Blokhus-Salt"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 8,
@@ -212,8 +205,7 @@
           "name": "Mosbjerg Dambrug Udløb"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 9,
@@ -247,8 +239,7 @@
           "name": "B 517 Tilløb RA Flyvestation Aalborg"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 10,
@@ -266,8 +257,7 @@
           "name": "Kokkedal Slot"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 11,
@@ -285,8 +275,7 @@
           "name": "Gjøl Renseanlæg"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 12,
@@ -304,8 +293,7 @@
           "name": "Flauenskjold Vandværk"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 13,
@@ -323,8 +311,7 @@
           "name": "Lejrmarksvej 5, 9690 Fjerritslev"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 14,
@@ -342,8 +329,7 @@
           "name": "Tanderupgårdsvej 101, 9690"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 15,
@@ -361,8 +347,7 @@
           "name": "K. M. Fish Machinery A/S"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 16,
@@ -379,8 +364,7 @@
           "name": "Voergaard Slot, Voldgrav vest"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 17,
@@ -397,8 +381,7 @@
           "name": "Voergaard Slot, Voldgrav øst"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 18,
@@ -415,8 +398,7 @@
           "name": "Grundvandssænkning Koldenåvej 53 "
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 19,
@@ -433,8 +415,7 @@
           "name": "Stæten A/S Frederikshavn"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 20,
@@ -451,8 +432,7 @@
           "name": "Sæby genbrugsplads"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 21,
@@ -469,8 +449,7 @@
           "name": "Tandlæge Henrik Pedersen"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 22,
@@ -488,8 +467,7 @@
           "name": "Nibevej 476, 9240 Nibe"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   },
   {
     "orderId": 23,
@@ -507,7 +485,6 @@
           "name": "Danipharm A/S Nibe"
         }
       }
-    ],
-    "SafetyEquipment": false
+    ]
   }
 ]

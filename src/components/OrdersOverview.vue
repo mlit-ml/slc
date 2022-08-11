@@ -97,6 +97,8 @@ const openedMarkerId = ref()
 var orders = ref<Order[]>()
 const selectedRoute = ref<Route | undefined>(props.selectedRoute)
 
+const baseUrl = import.meta.env.BASE_URL
+
 watch(
   () => props.selectedRoute,
   (newValue, oldValue) => {
@@ -108,6 +110,7 @@ const markers = computed(() => {
   if (!orders.value) {
     return []
   }
+
   const markers = orders.value.map((o: Order): GMarker => {
     return {
       id: o.orderId,
@@ -134,7 +137,12 @@ function addLeadingZeros(num: number, totalLength: number): string {
 
 const getIcon = (o: Order): GMarkerIcon | string => {
   if (o.routeOrderNo) {
-    return '/images/markers/black' + addLeadingZeros(o.routeOrderNo, 2) + '.png'
+    return (
+      baseUrl +
+      'images/markers/black' +
+      addLeadingZeros(o.routeOrderNo, 2) +
+      '.png'
+    )
   } else {
     const icon = {
       path: pathIcons.INDUSTRY,
