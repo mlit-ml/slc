@@ -1,7 +1,7 @@
 <template>
   <Suspense>
     <template #fallback>
-      <div></div>
+      <div>FALLBACK</div>
     </template>
     <template #default>
       <div class="w-screen max-w-full">

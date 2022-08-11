@@ -1,5 +1,5 @@
 <template>
-  <div v-show="props.title == selectedTitle" class="tab h-screen relative">
+  <div class="tab h-screen relative">
     <slot></slot>
   </div>
 </template>
