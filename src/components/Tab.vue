@@ -1,5 +1,5 @@
 <template>
-  <div class="tab h-screen relative">
+  <div v-show="props.title == selectedTitle" class="tab tab-height relative">
     <slot></slot>
   </div>
 </template>
@@ -11,3 +11,9 @@ const props = defineProps<{
   title: string
 }>()
 </script>
+
+<style scoped>
+.tab-height {
+  height: calc(100vh - 11rem) !important;
+}
+</style>

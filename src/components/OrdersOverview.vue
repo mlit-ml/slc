@@ -1,6 +1,6 @@
 <template>
   <GMapMap
-    class="pb-48"
+    class="pb-2"
     :center="center"
     :zoom="9"
     :options="{
@@ -44,25 +44,14 @@
     </GMapMarker>
     <!--     </GMapCluster> -->
   </GMapMap>
-  <div
-    class="grid grid-cols-6 gap-7 items-center absolute w-full bottom-0 right-0"
-    style="padding-bottom: 9.5rem"
-  >
+  <div class="grid grid-cols-6 gap-7 items-center absolute w-full right-0 pt-1">
     <button>
       <component :is="GlobeIcon" class="text-indigo-600 w-6 h-6"></component>
     </button>
-    <div class="col-span-4">
+    <div class="col-span-4 flex">
       <Slider class="w-full"></Slider>
     </div>
-    <!--     <div class="hidden lg:block">
-      <button
-        class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-      >
-        Save changes
-      </button>
-    </div> -->
     <button class="justify-self-end">
-      <!-- </div> class="lg:hidden"> -->
       <component :is="RefreshIcon" class="text-indigo-600 w-6 h-6"></component>
     </button>
   </div>
