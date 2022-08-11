@@ -108,7 +108,7 @@ const markers = computed(() => {
   if (!orders.value) {
     return []
   }
-  return orders.value.map((o: Order): GMarker => {
+  const markers = orders.value.map((o: Order): GMarker => {
     return {
       id: o.orderId,
       position: {
@@ -132,6 +132,8 @@ const markers = computed(() => {
       },
     }
   })
+  console.log(markers)
+  return markers
 })
 
 function addLeadingZeros(num: number, totalLength: number): string {
