@@ -3,16 +3,16 @@
     <div class="relative w-full max-w-md h-full md:h-auto">
       <div class="p-2 text-left">
         <h3 class="mb-2 text-lg font-bold text-gray-500 dark:text-gray-400">
-          {{ $t(header) }}
+          {{ $t(header ?? $t('(Empty)')) }}
         </h3>
         <p class="mb-5 text-md font-normal text-gray-500 dark:text-gray-400">
-          {{ $t(footer) }}
+          {{ $t(footer ?? $t('(Empty)')) }}
         </p>
         <div class="text-center items-center pb-2 md:pb-0">
           <button
             type="button"
             class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 rounded-lg text-sm px-4 py-2 text-center mr-2"
-            @click="addToRoute(id)"
+            @click="addRemoveOrder(id)"
           >
             {{ props.buttonText }}
           </button>
@@ -45,14 +45,14 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'addToRouteClicked', id: number): void
+  (e: 'addRemoveOrderClicked', id: number): void
   (e: 'infoClicked', id: number): void
 }>()
 
 const isOpen = ref(true)
 
-function addToRoute(id: number) {
-  emit('addToRouteClicked', id)
+function addRemoveOrder(id: number) {
+  emit('addRemoveOrderClicked', id)
   setIsOpen(false)
 }
 

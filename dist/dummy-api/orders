@@ -1,546 +1,513 @@
 [
-    {
-      "orderId": 1,
-      "description": "BHJ Løkken",
-      "latitude": 57.3708683,
-      "longitude": 9.7312437,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "BHJ Løkken",
-          "samplesCount": 2,
-          "PlaceTypeId": 15,
-          "PlaceId": 9280,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+  {
+    "orderId": 1,
+    "description": "BHJ Løkken",
+    "latitude": 57.3708683,
+    "longitude": 9.7312437,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "BHJ Løkken"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 2,
-      "description": "Ingstrup Sø",
-      "latitude": 57.328915516899272,
-      "longitude": 9.7438940405936378,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "1. Ingstrup Sø landvindingslaug",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 26522,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "3. Ingstrup Sø landvindingslaug",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 26598,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 2,
+    "description": "Ingstrup Sø",
+    "latitude": 57.328915516899272,
+    "longitude": 9.7438940405936378,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "1. Ingstrup Sø landvindingslaug"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 3,
-      "description": "Hæstrup VV",
-      "latitude": 57.404861,
-      "longitude": 9.955282,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Hæstrup VV, Filterskyllevand",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 28270,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "3. Ingstrup Sø landvindingslaug"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 4,
-      "description": "Carlsberg",
-      "latitude": 57.2704216,
-      "longitude": 9.698845,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Carlsberg: Svaber",
-          "samplesCount": 8,
-          "PlaceTypeId": 0,
-          "PlaceId": 36072,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Carlsberg: Daglig M/U smag START",
-          "samplesCount": 4,
-          "PlaceTypeId": 0,
-          "PlaceId": 36147,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Carlsberg: Farve, Turbiditet",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 36064,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Carlsberg: Skyllevand Buffer",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 36068,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Carlsberg: Skyllevand Tapper",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 36069,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Carlsberg: Ugentlig M/U smag START",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 36153,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 3,
+    "description": "Hæstrup VV",
+    "latitude": 57.404861,
+    "longitude": 9.955282,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Hæstrup VV, Filterskyllevand"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 5,
-      "description": "DanHatch",
-      "latitude": 57.341961278633534,
-      "longitude": 9.965546596804602,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "DanHatch Rugerivej 26 DGU 9.699",
-          "samplesCount": 1,
-          "PlaceTypeId": 8,
-          "PlaceId": 11726,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 4,
+    "description": "Carlsberg",
+    "latitude": 57.2704216,
+    "longitude": 9.698845,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Carlsberg: Svaber"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 6,
-      "description": "DanHatch",
-      "latitude": 57.341375551239906,
-      "longitude": 9.9649486318323426,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "DanHatch Rugerivej 26, 9760 Vrå",
-          "samplesCount": 7,
-          "PlaceTypeId": 15,
-          "PlaceId": 11295,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Carlsberg: Daglig M/U smag START"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 7,
-      "description": "Blokhus Salt",
-      "latitude": 57.208716,
-      "longitude": 9.64997,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Blokhus-Salt",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 25777,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Carlsberg: Farve, Turbiditet"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 8,
-      "description": "Mosbjerg Dambrug",
-      "latitude": 57.501513,
-      "longitude": 10.270869,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Mosbjerg Dambrug Indløb",
-          "samplesCount": 4,
-          "PlaceTypeId": 1,
-          "PlaceId": 19819,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Mosbjerg Dambrug",
-          "samplesCount": 4,
-          "PlaceTypeId": 16,
-          "PlaceId": 9821,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "Mosbjerg Dambrug Udløb",
-          "samplesCount": 4,
-          "PlaceTypeId": 2,
-          "PlaceId": 19820,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Carlsberg: Skyllevand Buffer"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 9,
-      "description": "Flyvestation Aalborg",
-      "latitude": 57.1095895,
-      "longitude": 9.8570865,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "B 307 Flyvestation Aalborg",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 2003,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "B 517 Afløb RA Flyvestation Aalborg",
-          "samplesCount": 1,
-          "PlaceTypeId": 14,
-          "PlaceId": 18758,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
-        },
-        {
-          "name": "B 517 Tilløb RA Flyvestation Aalborg",
-          "samplesCount": 1,
-          "PlaceTypeId": 12,
-          "PlaceId": 18577,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Carlsberg: Skyllevand Tapper"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 10,
-      "description": "Kokkedal Slot",
-      "latitude": 57.0702412,
-      "longitude": 9.4820794,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Kokkedal Slot",
-          "samplesCount": 1,
-          "PlaceTypeId": 15,
-          "PlaceId": 1818,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Carlsberg: Ugentlig M/U smag START"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 11,
-      "description": "Gjø Renseanlæg",
-      "latitude": 57.065194901132081,
-      "longitude": 9.7152482159526219,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Gjøl Renseanlæg",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 320,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 5,
+    "description": "DanHatch",
+    "latitude": 57.341961278633534,
+    "longitude": 9.965546596804602,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "DanHatch Rugerivej 26 DGU 9.699"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 12,
-      "description": "Flauneskjold Vandværk",
-      "latitude": 57.240760959669153,
-      "longitude": 10.262399592254271,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Flauenskjold Vandværk",
-          "samplesCount": 1,
-          "PlaceTypeId": 7,
-          "PlaceId": 715,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 6,
+    "description": "DanHatch",
+    "latitude": 57.341375551239906,
+    "longitude": 9.9649486318323426,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "DanHatch Rugerivej 26, 9760 Vrå"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 13,
-      "description": "Lejrmarksvej 5, 9690",
-      "latitude": 57.08676271,
-      "longitude": 9.28672433,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Lejrmarksvej 5, 9690 Fjerritslev",
-          "samplesCount": 1,
-          "PlaceTypeId": 15,
-          "PlaceId": 37435,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 7,
+    "description": "Blokhus Salt",
+    "latitude": 57.208716,
+    "longitude": 9.64997,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Blokhus-Salt"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 14,
-      "description": "Tanderupgårdsvej 101, 9690",
-      "latitude": 57.053668,
-      "longitude": 9.34495,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Tanderupgårdsvej 101, 9690",
-          "samplesCount": 1,
-          "PlaceTypeId": 15,
-          "PlaceId": 17703,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 8,
+    "description": "Mosbjerg Dambrug",
+    "latitude": 57.501513,
+    "longitude": 10.270869,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Mosbjerg Dambrug Indløb"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 15,
-      "description": "K. M. Fish Machinery A/S",
-      "latitude": 57.279008072854268,
-      "longitude": 10.367317534992811,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "K. M. Fish Machinery A/S",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 3887,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Mosbjerg Dambrug"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 16,
-      "latitude": 57.2427168,
-      "longitude": 10.3340389,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Voergaard Slot, Voldgrav vest",
-          "samplesCount": 2,
-          "PlaceTypeId": 0,
-          "PlaceId": 37502,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Mosbjerg Dambrug Udløb"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 17,
-      "latitude": 57.2425194,
-      "longitude": 10.336131,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Voergaard Slot, Voldgrav øst",
-          "samplesCount": 2,
-          "PlaceTypeId": 0,
-          "PlaceId": 37511,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 9,
+    "description": "Flyvestation Aalborg",
+    "latitude": 57.1095895,
+    "longitude": 9.8570865,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "B 307 Flyvestation Aalborg"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 18,
-      "latitude": 57.459109215550875,
-      "longitude": 10.48180404106798,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Grundvandssænkning Koldenåvej 53 ",
-          "samplesCount": 2,
-          "PlaceTypeId": 0,
-          "PlaceId": 37166,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "B 517 Afløb RA Flyvestation Aalborg"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 19,
-      "latitude": 57.419559890457819,
-      "longitude": 10.48764570617162,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Stæten A/S Frederikshavn",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 13167,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      },
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "B 517 Tilløb RA Flyvestation Aalborg"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 20,
-      "latitude": 57.334208395385495,
-      "longitude": 10.459139188761318,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Sæby genbrugsplads",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 15306,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 10,
+    "description": "Kokkedal Slot",
+    "latitude": 57.0702412,
+    "longitude": 9.4820794,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Kokkedal Slot"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 21,
-      "latitude": 57.0424725,
-      "longitude": 9.9493814,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Tandlæge Henrik Pedersen",
-          "samplesCount": 4,
-          "PlaceTypeId": 15,
-          "PlaceId": 25348,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 11,
+    "description": "Gjø Renseanlæg",
+    "latitude": 57.065194901132081,
+    "longitude": 9.7152482159526219,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Gjøl Renseanlæg"
         }
-      ],
-      "SafetyEquipment": false 
-    },
-    {
-      "orderId": 22,
-      "description":"Nibevej 476, 9240 Nibe",
-      "latitude": 57.00282,
-      "longitude": 9.758984,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Nibevej 476, 9240 Nibe",
-          "samplesCount": 1,
-          "PlaceTypeId": 15,
-          "PlaceId": 16566,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 12,
+    "description": "Flauneskjold Vandværk",
+    "latitude": 57.240760959669153,
+    "longitude": 10.262399592254271,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Flauenskjold Vandværk"
         }
-      ],
-      "SafetyEquipment": false
-    },
-    {
-      "orderId": 23,
-      "description":"Danipharm A/S Nibe",
-      "latitude": 56.9940904,
-      "longitude": 9.6649399,
-      "color": "#000",
-      "icon": "INDUSTRY",
-      "places": [
-        {
-          "name": "Danipharm A/S Nibe",
-          "samplesCount": 1,
-          "PlaceTypeId": 0,
-          "PlaceId": 2040,
-          "latitude": 0.0,
-          "longitude": 0.0,
-          "SafetyEquipment": false
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 13,
+    "description": "Lejrmarksvej 5, 9690",
+    "latitude": 57.08676271,
+    "longitude": 9.28672433,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Lejrmarksvej 5, 9690 Fjerritslev"
         }
-      ],
-      "SafetyEquipment": false
-    }
-  ]
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 14,
+    "description": "Tanderupgårdsvej 101, 9690",
+    "latitude": 57.053668,
+    "longitude": 9.34495,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Tanderupgårdsvej 101, 9690"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 15,
+    "description": "K. M. Fish Machinery A/S",
+    "latitude": 57.279008072854268,
+    "longitude": 10.367317534992811,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "K. M. Fish Machinery A/S"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 16,
+    "latitude": 57.2427168,
+    "longitude": 10.3340389,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Voergaard Slot, Voldgrav vest"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 17,
+    "latitude": 57.2425194,
+    "longitude": 10.336131,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Voergaard Slot, Voldgrav øst"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 18,
+    "latitude": 57.459109215550875,
+    "longitude": 10.48180404106798,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Grundvandssænkning Koldenåvej 53 "
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 19,
+    "latitude": 57.419559890457819,
+    "longitude": 10.48764570617162,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Stæten A/S Frederikshavn"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 20,
+    "latitude": 57.334208395385495,
+    "longitude": 10.459139188761318,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Sæby genbrugsplads"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 21,
+    "latitude": 57.0424725,
+    "longitude": 9.9493814,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Tandlæge Henrik Pedersen"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 22,
+    "description": "Nibevej 476, 9240 Nibe",
+    "latitude": 57.00282,
+    "longitude": 9.758984,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Nibevej 476, 9240 Nibe"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  },
+  {
+    "orderId": 23,
+    "description": "Danipharm A/S Nibe",
+    "latitude": 56.9940904,
+    "longitude": 9.6649399,
+    "color": "#000",
+    "icon": "INDUSTRY",
+    "samples": [
+      {
+        "sampleId": 1,
+        "type": "Drikkevandskontrol",
+        "label": "Gruppe A",
+        "place": {
+          "name": "Danipharm A/S Nibe"
+        }
+      }
+    ],
+    "SafetyEquipment": false
+  }
+]

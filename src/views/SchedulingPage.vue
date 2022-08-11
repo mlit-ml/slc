@@ -78,29 +78,20 @@ const selectRoute = () => {
 }
 
 const routeFooter = computed(() => {
-  if (
-    sampleCount.value &&
-    selectedRoute.value &&
-    selectedRoute.value.waypoints
-  ) {
+  if (sampleCount.value && selectedRoute.value && selectedRoute.value.orders) {
     let sCount = sampleCount.value
     let samplesText = sCount > 1 ? t('samples') : t('sample')
-    let wCount = selectedRoute.value.waypoints.length
-    let waypointsText = wCount > 1 ? t('locations') : t('location')
-    return `${sCount} ${samplesText} ${t('distributed on')} ${waypointsText}`
+    let orderCount = selectedRoute.value.orders.length
+    let ordersText = orderCount > 1 ? t('orders') : t('order')
+    return `${sCount} ${samplesText} ${t('distributed on')} ${ordersText}`
   }
   return ''
 })
 
 const sampleCount = computed(() => {
-  if (selectedRoute.value?.waypoints) {
-    return selectedRoute.value.waypoints.reduce((acc, wp) => {
-      return (
-        acc +
-        wp.places.reduce((acc, p) => {
-          return acc + p.samplesCount
-        }, 0)
-      )
+  if (selectedRoute.value?.orders) {
+    return selectedRoute.value.orders.reduce((acc, o) => {
+      return acc + o.samples.length
     }, 0)
   } else {
     return 0
@@ -124,7 +115,7 @@ const showMapClicked = async () => {
     routeId: 0,
     scheduledSampling: new Date(),
     description: 'New Route',
-    waypoints: [],
+    orders: [],
   }
   routesStore.selectedRoute = selectedRoute
   console.log(routesStore.selectedRoute)
@@ -137,7 +128,7 @@ const calendarDayDoubleClicked = async (d: Date) => {
     routeId: 0,
     scheduledSampling: new Date(),
     description: 'New route',
-    waypoints: [],
+    orders: [],
   }
   routesStore.selectedRoute = selectedRoute
   router.push('/scheduling/orders')
@@ -148,7 +139,7 @@ const calendarItemDoubleClicked = async (item: CalendarItem) => {
     routeId: item.id,
     scheduledSampling: item.startDate,
     description: item.title,
-    waypoints: [],
+    orders: [],
   }
   routesStore.selectedRoute = selectedRoute
   router.push('/scheduling/orders')

@@ -1,29 +1,29 @@
 <template>
-  <!--   <Suspense>
+  <Suspense>
     <template #fallback>
       <div>FALLBACK</div>
     </template>
-    <template #default> -->
-  <div class="w-screen max-w-full">
-    <Tabs
-      :selected-tab-index="selectedTabIndex"
-      :classes="'mb-2'"
-      @selected-tab-changed="selectedTabChanged"
-    >
-      <Tab :title="$t('Overview')">
-        <OrdersOverview
-          :selected-route="selectedRoute"
-          @map-is-ready="mapIsReady"
-          @order-added="orderAdded"
-          @order-removed="orderRemoved"
-      /></Tab>
-      <Tab :title="$t('Route details')">
-        <RouteDetails :selected-route="selectedRoute"
-      /></Tab>
-    </Tabs>
-  </div>
-  <!--     </template>
-  </Suspense> -->
+    <template #default>
+      <div class="w-screen max-w-full">
+        <Tabs
+          :selected-tab-index="selectedTabIndex"
+          :classes="'mb-2'"
+          @selected-tab-changed="selectedTabChanged"
+        >
+          <Tab :title="$t('Overview')">
+            <OrdersOverview
+              :selected-route="selectedRoute"
+              @map-is-ready="mapIsReady"
+              @order-added="orderAdded"
+              @order-removed="orderRemoved"
+          /></Tab>
+          <Tab :title="$t('Route details')">
+            <RouteDetails :selected-route="selectedRoute"
+          /></Tab>
+        </Tabs>
+      </div>
+    </template>
+  </Suspense>
 </template>
 
 <script setup lang="ts">
@@ -44,7 +44,6 @@ import { useMsal } from '../auth/useMsal'
 
 import Route from '../types/Route'
 import Order from '../types/Order'
-import Waypoint from '@/types/Waypoint'
 
 const loading = useLoading()
 const router = useRouter()
@@ -63,13 +62,7 @@ const orderAdded = (id: number) => {
   })[0]
 
   if (selectedRoute.value && order) {
-    selectedRoute.value.waypoints.push({
-      orderId: order.orderId,
-      contact: order.contact,
-      lat: order.latitude,
-      lon: order.longitude,
-      places: order.samples.map(x => x.place),
-    })
+    selectedRoute.value.orders.push(order)
   }
 }
 
@@ -79,10 +72,10 @@ const orderRemoved = (id: number) => {
   })[0]
 
   if (selectedRoute.value && order) {
-    const filtered = selectedRoute.value.waypoints.filter((wp: Waypoint) => {
-      return wp.orderId == id
+    const filtered = selectedRoute.value.orders.filter((order: Order) => {
+      return order.orderId != id
     })
-    selectedRoute.value.waypoints = filtered
+    selectedRoute.value.orders = filtered
   }
 }
 

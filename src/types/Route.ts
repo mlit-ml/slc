@@ -1,8 +1,8 @@
-import Waypoint from './Waypoint'
+import Order from './Order'
 
 export default interface Route {
   routeId: number
   description: string
   scheduledSampling: Date
-  waypoints: Waypoint[]
+  orders: Order[]
 }

@@ -16,7 +16,7 @@
       :grid-size="5"
       :max-zoom="9"
     > -->
-    <!--     <GMapMarker
+    <GMapMarker
       v-for="(m, index) in markers"
       :key="index"
       :position="m.position"
@@ -36,12 +36,12 @@
             :header="m.infoWindow.header"
             :footer="m.infoWindow.footer"
             :button-text="m.infoWindow.buttonText"
-            @add-to-route-clicked="addToRoute"
+            @add-remove-order-clicked="addRemoveOrderClicked"
             @info-clicked="showOrder"
           />
         </GMapInfoWindow>
       </div>
-    </GMapMarker> -->
+    </GMapMarker>
     <!--     </GMapCluster> -->
   </GMapMap>
   <div class="grid grid-cols-6 gap-7 items-center absolute w-full right-0 pt-1">
@@ -120,19 +120,11 @@ const markers = computed(() => {
       draggable: false,
       infoWindow: {
         header: o.description,
-        footer:
-          t('Samples:') +
-          ' ' +
-          o.samples
-            .map(x => x.place)
-            .reduce((acc, obj) => {
-              return acc + obj.samplesCount
-            }, 0),
+        footer: t('Samples:') + ' ' + o.samples.length,
         buttonText: o.routeOrderNo ? t('Remove') : t('Add'),
       },
     }
   })
-  console.log(markers)
   return markers
 })
 
@@ -177,7 +169,7 @@ const emit = defineEmits<{
   (e: 'orderRemoved', id: number): void
 }>()
 
-const addToRoute = async (id: number) => {
+const addRemoveOrderClicked = async (id: number) => {
   let order = orders.value?.filter(o => {
     return o.orderId == id
   })[0]
@@ -198,11 +190,12 @@ const addToRoute = async (id: number) => {
         .forEach(o => {
           o.routeOrderNo = i++
         })
-
+      selectedRoute.value.orders = selectedRoute.value.orders.filter(
+        x => x.orderId != id,
+      )
       emit('orderRemoved', id)
     } else {
-      console.error(selectedRoute.value.waypoints.length)
-      order.routeOrderNo = selectedRoute.value.waypoints.length + 1
+      order.routeOrderNo = selectedRoute.value.orders.length + 1
       emit('orderAdded', id)
     }
   }

@@ -74,14 +74,9 @@ routesStore.$persistedState.isReady().then(async () => {
 })
 
 const sampleCount = (r: Route) => {
-  if (r.waypoints) {
-    return r.waypoints.reduce((acc, wp) => {
-      return (
-        acc +
-        wp.places.reduce((acc, p) => {
-          return acc + (p.samplesCount ?? 0)
-        }, 0)
-      )
+  if (r.orders) {
+    return r.orders.reduce((acc, wp) => {
+      return acc + wp.samples.length
     }, 0)
   } else {
     return 0
@@ -89,14 +84,12 @@ const sampleCount = (r: Route) => {
 }
 
 const routeFooter = (r: Route) => {
-  console.log(r.waypoints)
-  if (r.waypoints) {
+  if (r.orders) {
     let sCount = sampleCount(r)
     console.log(sCount)
     let samplesText = sCount > 1 ? t('samples') : t('sample')
-    let wCount = r.waypoints.length
-    let waypointsText = wCount > 1 ? t('locations') : t('location')
-    return `${sCount} ${samplesText} ${t('distributed on')} ${waypointsText}`
+    let ordersText = r.orders.length > 1 ? t('orders') : t('order')
+    return `${sCount} ${samplesText} ${t('distributed on')} ${ordersText}`
   }
   return ''
 }

@@ -10,8 +10,8 @@
         />
       </tbody>
       <PhoneTableSection :title="$t('Directions')" />
-      <tbody v-if="hasWaypoints" class="bg-white">
-        <div v-for="(w, index) in selectedRoute?.waypoints" :key="index">
+      <tbody v-if="hasOrders" class="bg-white">
+        <div v-for="(w, index) in selectedRoute?.orders" :key="index">
           <hr class="border" />
           <PhoneTableRow
             :header="'First waypoint'"
@@ -111,9 +111,9 @@ const routesStore = useRoutesStore()
 
 const selectedRoute = ref<Route>()
 
-const hasWaypoints = computed(() => {
-  if (selectedRoute.value?.waypoints) {
-    return selectedRoute.value.waypoints.length > 0
+const hasOrders = computed(() => {
+  if (selectedRoute.value?.orders) {
+    return selectedRoute.value.orders.length > 0
   }
   return false
 })

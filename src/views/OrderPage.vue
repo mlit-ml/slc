@@ -120,6 +120,7 @@ import Customer from '../types/Customer'
 
 import { dateAndTime } from '../helpers/dateHelpers'
 import router from '@/router'
+import Route from '@/types/Route'
 
 const ordersStore = useOrdersStore()
 const routesStore = useRoutesStore()
@@ -135,6 +136,7 @@ const mapCenter = computed(() => {
   }
 })
 
+const selectedRoute = ref<Route>()
 const order = ref<Order>()
 const customer = ref<Customer>()
 
@@ -152,8 +154,12 @@ const scheduledSamplingChanged = (d: Date) => {
 }
 
 const addToRoute = () => {
-  ordersStore.selectedTabIndex = 1
-  router.push('/scheduling/orders')
+  if (order.value && selectedRoute.value) {
+    ordersStore.selectedTabIndex = 1
+    order.value.routeOrderNo = selectedRoute.value.orders.length + 1
+    selectedRoute.value.orders.push(order.value)
+    router.push('/scheduling/orders')
+  }
 }
 
 const sampleClicked = (sampleId: number) => {
@@ -170,6 +176,7 @@ if (routesStore.selectedRoute) {
   scheduledSampling.value = new Date(
     routesStore.selectedRoute.scheduledSampling.toString(),
   )
+  selectedRoute.value = routesStore.selectedRoute
 }
 
 ordersStore.$persistedState.isReady().then(async () => {
@@ -179,7 +186,7 @@ ordersStore.$persistedState.isReady().then(async () => {
     order.value = response
   } else {
     const filtered = ordersStore.orders.filter(o => o.orderId == orderId.value)
-    order.value = ordersStore.orders[0] // filtered[0]
+    order.value = filtered[0] // filtered[0]
   }
 
   order.value.samples = [
