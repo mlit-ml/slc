@@ -16,7 +16,7 @@
       :grid-size="5"
       :max-zoom="9"
     > -->
-    <GMapMarker
+    <!--     <GMapMarker
       v-for="(m, index) in markers"
       :key="index"
       :position="m.position"
@@ -41,7 +41,7 @@
           />
         </GMapInfoWindow>
       </div>
-    </GMapMarker>
+    </GMapMarker> -->
     <!--     </GMapCluster> -->
   </GMapMap>
   <div class="grid grid-cols-6 gap-7 items-center absolute w-full right-0 pt-1">
