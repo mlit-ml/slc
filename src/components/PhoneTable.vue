@@ -12,6 +12,6 @@
 
 <style>
 .phone-table th {
-  padding-top: 26px !important;
+  padding-top: 12px !important;
 }
 </style>

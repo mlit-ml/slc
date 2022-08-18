@@ -14,6 +14,6 @@ const props = defineProps<{
 
 <style scoped>
 .tab-height {
-  height: calc(100vh - 11rem) !important;
+  height: calc(100vh - 8.5rem) !important;
 }
 </style>

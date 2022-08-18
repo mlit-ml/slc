@@ -62,7 +62,7 @@
       </tbody>
       <PhoneTableSection :title="$t('Sampling notes:')" />
       <tbody class="bg-white">
-        <PhoneTableRow :text-area="true" />
+        <PhoneTableRow :text-area="''" />
       </tbody>
       <PhoneTableSection />
       <!-- Empty section -->
@@ -87,7 +87,7 @@ import PhoneTableSection from '../components/PhoneTableSection.vue'
 import Sample from '../types/Sample'
 import Customer from '../types/Customer'
 
-import { dateAndTime } from '../helpers/dateHelpers'
+import { dateAndTime } from '../helpers/dateHelper'
 import router from '@/router'
 
 const samplesStore = useSamplesStore()

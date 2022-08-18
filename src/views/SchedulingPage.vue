@@ -24,22 +24,21 @@
           @row-clicked="showMapClicked"
         />
       </tbody>
-      <PhoneTableSection :title="t('Route')" />
-      <tbody class="bg-white">
+      <RouteDetails
+        v-if="selectedRoute"
+        :selected-route="selectedRoute"
+        :show-unsaved-route="false"
+        @route-selected="selectRoute"
+      />
+      <template v-else>
+        <PhoneTableSection :title="t('Route')" />
         <PhoneTableRow
-          v-if="selectedRoute"
-          :clickable="true"
-          :header="selectedRoute.description"
-          :footer1="selectedRoute.description"
-        />
-        <PhoneTableRow
-          v-else
           :clickable="true"
           :header="t('No route')"
           :footer1="t('Click here to select a route')"
           @row-clicked="selectRoute"
         />
-      </tbody>
+      </template>
     </template>
   </PhoneTable>
 </template>
@@ -49,6 +48,7 @@ import WeekCalendar from '../components/WeekCalendar.vue'
 import PhoneTable from '../components/PhoneTable.vue'
 import PhoneTableRow from '../components/PhoneTableRow.vue'
 import PhoneTableSection from '../components/PhoneTableSection.vue'
+import RouteDetails from '../components/RouteDetails.vue'
 
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -72,6 +72,13 @@ const router = useRouter()
 
 const selectedRoute = ref<Route>()
 const routes = ref<Route[]>()
+
+routesStore.$persistedState.isReady().then(async () => {
+  if (!routesStore.routes) {
+    routesStore.routes = await apiService.get('routes')
+  }
+  selectedRoute.value = routesStore.selectedRoute
+})
 
 const selectRoute = () => {
   router.push('/scheduling/routes')
@@ -111,27 +118,29 @@ routesStore.$persistedState.isReady().then(async () => {
 // Create new route
 const showMapClicked = async () => {
   console.log('show map')
-  const selectedRoute: Route = {
-    routeId: 0,
-    scheduledSampling: new Date(),
-    description: 'New Route',
-    orders: [],
+
+  if (!routesStore.selectedRoute) {
+    routesStore.selectedRoute = createNewRoute()
   }
-  routesStore.selectedRoute = selectedRoute
   console.log(routesStore.selectedRoute)
   router.push('/scheduling/orders')
 }
 
 // Create new route
 const calendarDayDoubleClicked = async (d: Date) => {
-  const selectedRoute: Route = {
+  routesStore.selectedRoute = createNewRoute()
+  router.push('/scheduling/orders')
+}
+
+const createNewRoute = (): Route => {
+  const route: Route = {
     routeId: 0,
     scheduledSampling: new Date(),
     description: 'New route',
     orders: [],
+    packaging: [],
   }
-  routesStore.selectedRoute = selectedRoute
-  router.push('/scheduling/orders')
+  return route
 }
 
 const calendarItemDoubleClicked = async (item: CalendarItem) => {
@@ -140,6 +149,7 @@ const calendarItemDoubleClicked = async (item: CalendarItem) => {
     scheduledSampling: item.startDate,
     description: item.title,
     orders: [],
+    packaging: [],
   }
   routesStore.selectedRoute = selectedRoute
   router.push('/scheduling/orders')

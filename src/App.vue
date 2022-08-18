@@ -99,7 +99,6 @@ const pageHistory = computed(() => {
       path: matches.length > 1 ? matches[1].path : '',
     },
   }
-
   return history
 })
 

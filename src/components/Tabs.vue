@@ -16,7 +16,7 @@
       >
         <a
           href="#"
-          class="inline-block p-2 rounded-t-lg border-b-2 border-transparent"
+          class="inline-block p-1 rounded-t-lg border-b-2 border-transparent"
           :class="activeClass(index)"
           >{{ tab.title }}</a
         >
@@ -46,7 +46,7 @@ provide('selectedTitle', selectedTitle)
 watch(
   () => props.selectedTabIndex,
   index => {
-    selectedIndex.value = index
+    selectTab(index)
   },
 )
 

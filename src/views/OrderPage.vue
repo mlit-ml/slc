@@ -62,14 +62,14 @@
       </tbody>
       <PhoneTableSection :title="$t('Sampling notes:')" />
       <tbody class="bg-white">
-        <PhoneTableRow :text-area="true" />
+        <PhoneTableRow :text-area="''" />
       </tbody>
       <PhoneTableSection :title="$t('Sampling:')" />
       <tbody class="bg-white">
         <PhoneTableRow
           :header="$t('Select sampling date and time')"
           :footer1="scheduledSampling ? dateAndTime(scheduledSampling) : ''"
-          :date-input="true"
+          :date-input="new Date()"
           :date-initial="scheduledSampling"
           @date-changed="scheduledSamplingChanged"
         />
@@ -118,7 +118,7 @@ import PhoneTableSection from '../components/PhoneTableSection.vue'
 import Order from '../types/Order'
 import Customer from '../types/Customer'
 
-import { dateAndTime } from '../helpers/dateHelpers'
+import { dateAndTime } from '../helpers/dateHelper'
 import router from '@/router'
 import Route from '@/types/Route'
 
@@ -200,6 +200,7 @@ ordersStore.$persistedState.isReady().then(async () => {
         longitude: 9,
         samplesCount: 1,
       },
+      packaging: [],
     },
   ]
 

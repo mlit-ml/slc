@@ -1,3 +1,4 @@
+import Packaging from './Packaging'
 import Place from './Place'
 
 export default interface Sample {
@@ -5,4 +6,5 @@ export default interface Sample {
   place: Place
   type: string
   label: string
+  packaging: Packaging[]
 }

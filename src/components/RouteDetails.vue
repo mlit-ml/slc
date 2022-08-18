@@ -2,21 +2,69 @@
   <div class="hidden lg:block">big screen not supported yet</div>
   <PhoneTable class="lg:hidden">
     <template #content>
-      <PhoneTableSection :title="$t('Route')" />
-      <tbody class="bg-white">
-        <PhoneTableRow
-          :header="selectedRoute?.description"
-          :footer1="'Footer'"
-        />
-      </tbody>
-      <PhoneTableSection :title="$t('Directions')" />
-      <tbody v-if="hasOrders" class="bg-white">
-        <div v-for="(w, index) in selectedRoute?.orders" :key="index">
-          <hr class="border" />
+      <template v-if="!props.showUnsavedRoute && selectedRoute?.pristine">
+        <PhoneTableSection :title="$t('Route')" />
+        <tbody class="bg-white">
           <PhoneTableRow
-            :header="'First waypoint'"
+            :header="$t('No route')"
+            :footer1="$t('Click here to select a route')"
+            @row-clicked="emit('routeSelected')"
+          />
+        </tbody>
+      </template>
+      <template v-else>
+        <PhoneTableSection :title="$t('Route')" />
+        <tbody class="bg-white">
+          <PhoneTableRow
+            v-if="props.editable"
+            :text-input="selectedRoute?.description"
+            :footer1="RouteHelper.getInstance().routeFooter(selectedRoute!)"
+            @row-clicked="emit('routeSelected')"
+            @text-input-changed="routeDescriptionChanged"
+          />
+          <PhoneTableRow
+            v-else
+            :header="selectedRoute?.description"
+            :footer1="RouteHelper.getInstance().routeFooter(selectedRoute!)"
+            @row-clicked="emit('routeSelected')"
+          />
+        </tbody>
+
+        <PhoneTableSection :title="$t('Directions')" />
+        <tbody v-if="hasOrders" class="bg-white">
+          <template v-for="(o, index) in selectedRoute!.orders" :key="index">
+            <hr class="border" />
+            <PhoneTableRow
+              :header="'First waypoint'"
+              :footer1="'Address'"
+              :footer2="'Samples collected'"
+              :no-borders="true"
+              :styles="'padding-left:1.5rem'"
+            >
+              <div class="absolute ml-5 w-5">
+                <div
+                  class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
+                />
+                <div
+                  class="bg-gray-300 w-3 h-3 rounded-full mt-1 m-auto place-self-center"
+                />
+                <div
+                  style=""
+                  class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
+                />
+                <div
+                  class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
+                />
+                <div
+                  class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
+                />
+              </div>
+            </PhoneTableRow>
+          </template>
+          <hr class="border ml-6" />
+          <PhoneTableRow
+            :header="'Home'"
             :footer1="'Address'"
-            :footer2="'Samples collected'"
             :no-borders="true"
             :styles="'padding-left:1.5rem'"
           >
@@ -24,56 +72,37 @@
               <div
                 class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
               />
-              <div
-                class="bg-gray-300 w-3 h-3 rounded-full mt-1 m-auto place-self-center"
-              />
-              <div
-                style=""
-                class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
-              />
-              <div
-                class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
-              />
-              <div
-                class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
-              />
+              <component
+                :is="LocationMarkerIcon"
+                class="text-gray-300 w-5 h-5 mt-1 m-auto place-self-center"
+              ></component>
             </div>
           </PhoneTableRow>
-        </div>
-        <hr class="border ml-6" />
-        <PhoneTableRow
-          :header="'Home'"
-          :footer1="'Address'"
-          :no-borders="true"
-          :styles="'padding-left:1.5rem'"
-        >
-          <div class="absolute ml-5 w-5">
-            <div
-              class="bg-gray-300 w-1 h-1 rounded-full mt-1 m-auto place-self-center"
-            />
-            <component
-              :is="LocationMarkerIcon"
-              class="text-gray-300 w-5 h-5 mt-1 m-auto place-self-center"
-            ></component>
-          </div>
-        </PhoneTableRow>
-        <hr class="border" />
-      </tbody>
-
-      <tbody v-else class="bg-white">
-        <PhoneTableRow
-          :header="'No directions to show'"
-          :footer1="'Add orders to the route in the overview'"
-        />
-      </tbody>
-
-      <PhoneTableSection :title="$t('Packaging')" />
-      <tbody class="bg-white">
-        <PhoneTableRow :header="'First bottle'" :footer1="'description'" />
-      </tbody>
-
-      <PhoneTableSection />
-      <!-- Empty section -->
+          <hr class="border" />
+        </tbody>
+        <tbody v-else class="bg-white">
+          <PhoneTableRow
+            :header="'No directions to show'"
+            :footer1="'Add orders to the route in the overview'"
+          />
+        </tbody>
+        <template v-if="selectedRoute?.packaging">
+          <PhoneTableSection :title="$t('Packaging')" />
+          <tbody class="bg-white">
+            <template
+              v-for="(p, index) in selectedRoute?.packaging"
+              :key="index"
+            >
+              <PhoneTableRow
+                :header="'First bottle'"
+                :footer1="'description'"
+              />
+            </template>
+          </tbody>
+        </template>
+        <PhoneTableSection />
+        <!-- Empty section -->
+      </template>
     </template>
   </PhoneTable>
 </template>
@@ -97,11 +126,18 @@ import Route from '../types/Route'
 import 'vue-loading-overlay/dist/vue-loading.css'
 
 import ApiService from '../api/apiService'
+import RouteHelper from '../helpers/routeHelper'
 
 import { LocationMarkerIcon } from '@heroicons/vue/solid'
 
 const props = defineProps<{
   selectedRoute?: Route
+  showUnsavedRoute: boolean
+  editable?: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'routeSelected'): void
 }>()
 
 const apiService = new ApiService(useMsal())
@@ -110,6 +146,14 @@ const router = useRouter()
 const routesStore = useRoutesStore()
 
 const selectedRoute = ref<Route>()
+
+const routeDescriptionChanged = (t: string) => {
+  if (selectedRoute.value) {
+    selectedRoute.value.description = t
+    selectedRoute.value.pristine = false
+    routesStore.routes?.push(selectedRoute.value)
+  }
+}
 
 const hasOrders = computed(() => {
   if (selectedRoute.value?.orders) {

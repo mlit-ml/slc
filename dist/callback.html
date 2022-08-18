@@ -13,11 +13,10 @@
       })
         .signinPopupCallback()
         .then(function (user) {
-          console.log('signin response success', user)
           window.location.href = '../'
-        }) 
+        })  
         .catch(function (err) { gi
-          console.log(err)
+          console.error(err)
         })
     </script>
   </body> 

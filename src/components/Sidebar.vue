@@ -64,7 +64,7 @@
     <main id="panel" ref="panel" @click="panelClicked">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div
-          class="grid grid-cols-3 lg:flex items-center border-b-2 border-gray-100 py-6 lg:justify-start lg:space-x-10"
+          class="grid grid-cols-3 lg:flex items-center border-b-2 border-gray-100 lg:py-6 py-1 lg:justify-start lg:space-x-10"
         >
           <div class="lg:flex lg:w-0 lg:flex-1">
             <router-link

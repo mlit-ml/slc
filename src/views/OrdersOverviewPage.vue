@@ -18,7 +18,10 @@
               @order-removed="orderRemoved"
           /></Tab>
           <Tab :title="$t('Route details')">
-            <RouteDetails :selected-route="selectedRoute"
+            <RouteDetails
+              :selected-route="selectedRoute"
+              :show-unsaved-route="true"
+              :editable="true"
           /></Tab>
         </Tabs>
       </div>
@@ -85,8 +88,6 @@ ordersStore.$persistedState.isReady().then(async () => {
     ordersStore.selectedTabIndex = 0 // reset
   }
 })
-
-selectedTabIndex.value = 0
 
 routesStore.$persistedState.isReady().then(async () => {
   if (!routesStore.selectedRoute) {
