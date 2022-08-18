@@ -6,6 +6,7 @@
         <PhoneTableSection :title="$t('Route')" />
         <tbody class="bg-white">
           <PhoneTableRow
+            :clickable="true"
             :header="$t('No route')"
             :footer1="$t('Click here to select a route')"
             @row-clicked="emit('routeSelected')"
@@ -24,6 +25,7 @@
           />
           <PhoneTableRow
             v-else
+            :clickable="true"
             :header="selectedRoute?.description"
             :footer1="RouteHelper.getInstance().routeFooter(selectedRoute!)"
             @row-clicked="emit('routeSelected')"
@@ -35,11 +37,13 @@
           <template v-for="(o, index) in selectedRoute!.orders" :key="index">
             <hr class="border" />
             <PhoneTableRow
+              :clickable="true"
               :header="'First waypoint'"
               :footer1="'Address'"
               :footer2="'Samples collected'"
               :no-borders="true"
               :styles="'padding-left:1.5rem'"
+              @row-clicked="showOrder(o.orderId)"
             >
               <div class="absolute ml-5 w-5">
                 <div
@@ -147,11 +151,15 @@ const routesStore = useRoutesStore()
 
 const selectedRoute = ref<Route>()
 
+const showOrder = async (id: number) => {
+  router.push({ name: 'Order', params: { orderId: id.toString() } })
+}
+
 const routeDescriptionChanged = (t: string) => {
   if (selectedRoute.value) {
     selectedRoute.value.description = t
     selectedRoute.value.pristine = false
-    routesStore.routes?.push(selectedRoute.value)
+    //routesStore.routes?.push(selectedRoute.value)
   }
 }
 

@@ -43,10 +43,9 @@
             <div>
               <a
                 href="#"
-                class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                @click="signOut"
+                class="w-full flex items-center justify-center py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                {{ $t('Sign out') }}
+                <span>{{ $t('0 changes') }}</span>
               </a>
               <!-- <p class="mt-6 text-center text-base font-medium text-gray-500">
                 Existing customer?

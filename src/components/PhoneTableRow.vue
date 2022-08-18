@@ -16,20 +16,21 @@
               class="text-indigo-600 w-6 h-6"
             ></component>
           </div>
-          <span class="fond-bold text-sm text-gray-900 table-row">
+          <span class="font-medium text-medium text-gray-900 table-row">
             {{ header! }}
           </span>
           <input
-            v-if="textInput"
+            v-if="textInput || textInput == ''"
             :value="textInput"
-            class="w-full mt-1 fond-bold text-sm text-gray-900 table-row"
+            class="w-full mt-1 text-medium text-gray-900 table-row"
+            :class="header ? '' : 'font-medium'"
             @keyup.enter="inputEnterKeyUp"
             @change="(p) => { emit('textInputChanged', (p.target as HTMLInputElement).value)}"
           />
           <textarea
-            v-if="textArea"
+            v-if="textArea || textArea == ''"
             :value="textArea"
-            class="w-full mt-1"
+            class="w-full mt-1 text-medium text-gray-900 table-row"
             @keyup.enter="inputEnterKeyUp"
           />
           <span v-if="footer1" class="text-xs text-gray-800 table-row">
@@ -87,9 +88,10 @@ const target = computed(() => {
 
 const showDateInput = ref(true)
 
-const focusClassObject = props.textInput
-  ? ''
-  : 'active:bg-gray-200 focus:bg-gray-200'
+const focusClassObject =
+  props.clickable && !props.textInput
+    ? 'active:bg-gray-200 focus:bg-gray-200'
+    : ''
 
 const scheduledSamplingChanged = async (d: Date) => {}
 

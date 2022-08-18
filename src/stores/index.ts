@@ -15,9 +15,11 @@ export const plugin: Plugin = app => {
           return item
         },
         setItem: async (key, value) => {
+          console.error('set', key)
           return localforage.setItem(key, value)
         },
         removeItem: async key => {
+          console.error('remove', key)
           return localforage.removeItem(key)
         },
       },
