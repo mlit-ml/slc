@@ -4,7 +4,6 @@ import { ref } from 'vue'
 
 export const useCustomersStore = defineStore('customers', () => {
   const customers = ref<Customer[]>()
-
   return {
     customers,
   }

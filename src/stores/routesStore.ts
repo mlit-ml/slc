@@ -5,6 +5,7 @@ import Route from '../types/Route'
 export const useRoutesStore = defineStore('routes', () => {
   const selectedRoute = ref<Route>()
   const routes = ref<Route[]>()
+
   /*  
   const login = async () => {
     //const result = await auth.loginPopup()

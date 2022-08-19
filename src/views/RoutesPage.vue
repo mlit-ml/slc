@@ -111,7 +111,7 @@ const selectedTabIndex = ref(0)
 const sortRoutes = (routes: Route[] | undefined): Route[] => {
   if (routes) {
     const sorted = routes.sort(
-      (a, b) => +b.scheduledSampling - +a.scheduledSampling,
+      (a, b) => +new Date(b.scheduledSampling) - +new Date(a.scheduledSampling),
     )
     return sorted
   }

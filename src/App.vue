@@ -3,8 +3,6 @@ import { computed, getCurrentInstance } from 'vue'
 import { useRouter, useRoute, RouteRecordNormalized } from 'vue-router'
 import { useIsAuthenticated } from './auth/useIsAuthenticated'
 
-import { useAuthStore } from './stores/authStore'
-
 import Sidebar from './components/Sidebar.vue'
 import ServiceWorkerToast from './components/ServiceWorkerToast.vue'
 import AuthDialog from './components/AuthDialog.vue'
@@ -16,7 +14,6 @@ const appName =
 
 const router = useRouter()
 const route = useRoute()
-const authStore = useAuthStore()
 const isAuthenticated = useIsAuthenticated()
 
 const pathRegex = /[a-zA-Z]+$/

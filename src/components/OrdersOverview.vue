@@ -44,16 +44,23 @@
     </GMapMarker>
     <!--     </GMapCluster> -->
   </GMapMap>
-  <div class="grid grid-cols-6 gap-7 items-center absolute w-full right-0 pt-1">
-    <button>
-      <component :is="GlobeIcon" class="text-indigo-600 w-6 h-6"></component>
-    </button>
-    <div class="col-span-4 flex">
-      <Slider class="w-full"></Slider>
+  <div class="flex items-center">
+    <div>
+      <button class="align-middle">
+        <component :is="GlobeIcon" class="text-indigo-600 w-6 h-6"></component>
+      </button>
     </div>
-    <button class="justify-self-end">
-      <component :is="RefreshIcon" class="text-indigo-600 w-6 h-6"></component>
-    </button>
+    <div class="justify-center w-full pl-4 pr-4">
+      <Slider class="w-full align-middle"></Slider>
+    </div>
+    <div class="ml-auto">
+      <button class="align-middle">
+        <component
+          :is="RefreshIcon"
+          class="text-indigo-600 w-6 h-6"
+        ></component>
+      </button>
+    </div>
   </div>
 </template>
 

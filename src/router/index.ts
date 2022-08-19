@@ -1,4 +1,3 @@
-import { useAuthStore } from '../stores/authStore'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { registerGuard } from './Guard'
 

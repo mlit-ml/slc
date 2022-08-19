@@ -86,15 +86,17 @@
           @row-clicked="sampleClicked(s.sampleId)"
         />
       </tbody>
-      <PhoneTableSection :title="$t('Add order')" />
-      <tbody class="bg-white">
-        <PhoneTableRow
-          :header="$t('Add to route')"
-          :footer1="$t('Adds order to route with the selected sampling date')"
-          :clickable="true"
-          @row-clicked="addToRoute"
-        />
-      </tbody>
+      <template v-if="!order?.routeGuid">
+        <PhoneTableSection :title="$t('Add order')" />
+        <tbody class="bg-white">
+          <PhoneTableRow
+            :header="$t('Add to route')"
+            :footer1="$t('Adds order to route with the selected sampling date')"
+            :clickable="true"
+            @row-clicked="addToRoute"
+          />
+        </tbody>
+      </template>
       <PhoneTableSection />
       <!-- Empty section -->
     </template>

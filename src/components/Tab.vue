@@ -16,4 +16,9 @@ const props = defineProps<{
 .tab-height {
   height: calc(100vh - 8.5rem) !important;
 }
+@media (min-width: 1024px) {
+  .tab-height {
+    height: calc(100vh - 10.5rem) !important;
+  }
+}
 </style>

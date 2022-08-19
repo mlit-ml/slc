@@ -7,7 +7,7 @@ export default interface Route {
   description: string
   scheduledSampling: Date
   sampleCollector?: SampleCollector
-  pristine?: boolean
+  guid?: string
   orders: Order[]
   packaging: Packaging[]
 }

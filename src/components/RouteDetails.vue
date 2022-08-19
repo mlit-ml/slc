@@ -2,7 +2,7 @@
   <div class="hidden lg:block">big screen not supported yet</div>
   <PhoneTable class="lg:hidden">
     <template #content>
-      <template v-if="!props.showUnsavedRoute && selectedRoute?.pristine">
+      <template v-if="!props.showUnsavedRoute && selectedRoute?.guid">
         <PhoneTableSection :title="$t('Route')" />
         <tbody class="bg-white">
           <PhoneTableRow
@@ -131,6 +131,7 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 
 import ApiService from '../api/apiService'
 import RouteHelper from '../helpers/routeHelper'
+import StringHelper from '../helpers/stringHelper'
 
 import { LocationMarkerIcon } from '@heroicons/vue/solid'
 
@@ -158,8 +159,17 @@ const showOrder = async (id: number) => {
 const routeDescriptionChanged = (t: string) => {
   if (selectedRoute.value) {
     selectedRoute.value.description = t
-    selectedRoute.value.pristine = false
-    //routesStore.routes?.push(selectedRoute.value)
+    if (!selectedRoute.value.guid) {
+      selectedRoute.value.guid = StringHelper.uuidv4()
+      routesStore.routes?.push(selectedRoute.value)
+    } else {
+      const index = routesStore.routes?.findIndex(
+        x => x.guid == selectedRoute.value?.guid,
+      )
+      if (index) {
+        routesStore.routes?.splice(index, 1, selectedRoute.value)
+      }
+    }
   }
 }
 

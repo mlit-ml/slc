@@ -93,8 +93,6 @@ const focusClassObject =
     ? 'active:bg-gray-200 focus:bg-gray-200'
     : ''
 
-const scheduledSamplingChanged = async (d: Date) => {}
-
 const rowClicked = async (e: MouseEvent) => {
   emit('rowClicked', e)
   if (props.dateInput) {

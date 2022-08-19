@@ -245,6 +245,39 @@ const panel = ref()
 
 const slideout = ref<Slideout>()
 
+var tsY: number
+var pvs = false
+
+onMounted(() => {
+  window.addEventListener('touchstart', (e: TouchEvent) => {
+    tsY = e.touches[0].clientY
+  })
+
+  window.addEventListener('touchmove', preventVerticalScroll, {
+    passive: false,
+  })
+
+  window.document.addEventListener(
+    'scroll',
+    e => {
+      if (pvs) {
+        e.preventDefault()
+      }
+    },
+    false,
+  )
+})
+
+/* inner-slider.js -> componentWillUnmount()
+window.removeEventListener('touchmove', this.preventDefault, {passive: false});
+ */
+const preventVerticalScroll = (e: TouchEvent) => {
+  var teY = e.changedTouches[0].clientY
+  if (tsY != teY && pvs) {
+    e.preventDefault()
+  }
+}
+
 const signOut = async () => {
   instance.logoutPopup()
 }
@@ -285,12 +318,17 @@ onMounted(() => {
     side: 'right',
   })
 
+  slideout.value.on('translatestart', function () {
+    pvs = true
+  })
+
   slideout.value.on('open', function () {
     isOpen.value = true
   })
 
   slideout.value.on('close', function () {
     isOpen.value = false
+    pvs = false
   })
 
   if (props.enableSlideoutTouch) {
