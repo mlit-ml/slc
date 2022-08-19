@@ -3,66 +3,19 @@
 
   <PhoneTable class="lg:hidden">
     <template #content>
-      <thead class="border-t-0"></thead>
-      <GMapMap
-        :center="mapCenter"
-        :zoom="16"
-        :options="{
-          mapTypeControl: false,
-          scaleControl: false,
-          streetViewControl: false,
-          rotateControl: false,
-          fullscreenControl: false,
-          draggable: false,
-          scrollwheel: false,
-          disableDoubleClickZoom: true,
-          zoomControl: false,
-          clickableIcons: false,
-          keyboardShortcuts: false,
-        }"
-        map-type-id="terrain"
-        class="w-full h-32"
-      >
-        <GMapMarker :key="1" :position="mapCenter"> </GMapMarker>
-      </GMapMap>
+      <PhoneTableSection :title="$t('Sample no:') + ' ' + sample?.sampleId" />
       <tbody class="bg-white">
         <PhoneTableRow
-          :clickable="true"
-          :header="customer?.name"
-          :footer1="customer?.address"
-          :footer2="customer?.city"
-          :hyperlink="
-            encodeURI(
-              'https://www.google.com/maps/dir/?api=1&destination=' +
-                sample?.place?.latitude +
-                ',' +
-                sample?.place?.longitude +
-                '&travelmode=driving',
-            )
-          "
+          :header="sample?.place.name"
+          :footer1="sample?.type"
+          :footer2="sample?.scope"
         />
+        <PhoneTableRow :footer1="$t('Created by:') + ' ' + sample?.createdBy" />
       </tbody>
-      <PhoneTableSection :title="$t('Contact:') + ' ' + customer?.name" />
+      <PhoneTableSection />
       <tbody class="bg-white">
-        <PhoneTableRow
-          :header="$t('Telefon')"
-          :footer1="customer?.phone"
-          :hyperlink="`tel:${customer?.phone}`"
-        />
-        <PhoneTableRow
-          :header="$t('Mobil')"
-          :footer1="customer?.mobile"
-          :hyperlink="`tel:${customer?.mobile}`"
-        />
-        <PhoneTableRow
-          :header="$t('E-mail')"
-          :footer1="customer?.email"
-          :hyperlink="`mailto: ${customer?.email}`"
-        />
-      </tbody>
-      <PhoneTableSection :title="$t('Sampling notes:')" />
-      <tbody class="bg-white">
-        <PhoneTableRow :text-area="''" />
+        <PhoneTableRow :header="$t('Sample label')" text-input="" />
+        <PhoneTableRow :header="$t('Sampling point')" text-input="" />
       </tbody>
       <PhoneTableSection />
       <!-- Empty section -->

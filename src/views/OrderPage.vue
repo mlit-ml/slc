@@ -64,16 +64,18 @@
       <tbody class="bg-white">
         <PhoneTableRow :text-area="''" />
       </tbody>
-      <PhoneTableSection :title="$t('Sampling:')" />
-      <tbody class="bg-white">
-        <PhoneTableRow
-          :header="$t('Select sampling date and time')"
-          :footer1="scheduledSampling ? dateAndTime(scheduledSampling) : ''"
-          :date-input="new Date()"
-          :date-initial="scheduledSampling"
-          @date-changed="scheduledSamplingChanged"
-        />
-      </tbody>
+      <template v-if="!order?.routeGuid">
+        <PhoneTableSection :title="$t('Sampling:')" />
+        <tbody class="bg-white">
+          <PhoneTableRow
+            :header="$t('Select sampling date and time')"
+            :footer1="scheduledSampling ? dateAndTime(scheduledSampling) : ''"
+            :date-input="new Date()"
+            :date-initial="scheduledSampling"
+            @date-changed="scheduledSamplingChanged"
+          />
+        </tbody>
+      </template>
       <PhoneTableSection :title="$t('Samples:')" />
       <tbody class="bg-white">
         <PhoneTableRow
@@ -194,8 +196,10 @@ ordersStore.$persistedState.isReady().then(async () => {
   order.value.samples = [
     {
       sampleId: 22,
+      createdBy: 'ML',
+      scope: 'Group A analysis',
       type: 'Drinking water assesment',
-      label: 'Group A analysis',
+      label: 'Prefilter #1',
       place: {
         name: 'Martins Place',
         latitude: 57,
