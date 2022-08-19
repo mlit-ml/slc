@@ -198,7 +198,9 @@
           </div>
         </div>
       </div>
-      <slot name="content"></slot>
+      <div ref="content">
+        <slot name="content"></slot>
+      </div>
     </main>
   </Popover>
 </template>
@@ -242,6 +244,7 @@ const props = defineProps<{
 const isOpen = ref(false)
 
 const panel = ref()
+const content = ref()
 
 const slideout = ref<Slideout>()
 
@@ -249,11 +252,11 @@ var tsY: number
 var pvs = false
 
 onMounted(() => {
-  window.addEventListener('touchstart', (e: TouchEvent) => {
+  window.document.addEventListener('touchstart', (e: TouchEvent) => {
     tsY = e.touches[0].clientY
   })
 
-  window.addEventListener('touchmove', preventVerticalScroll, {
+  window.document.addEventListener('touchmove', preventVerticalScroll, {
     passive: false,
   })
 
@@ -289,7 +292,7 @@ function toggleMenu() {
   isOpen.value = !isOpen.value
 }
 
-function panelClicked() {
+function panelClicked(e: MouseEvent) {
   if (slideout.value?.isOpen() && window.innerWidth < 1024) {
     slideout.value?.toggle()
     isOpen.value = false
@@ -323,10 +326,12 @@ onMounted(() => {
   })
 
   slideout.value.on('open', function () {
+    content.value.style.pointerEvents = 'none'
     isOpen.value = true
   })
 
   slideout.value.on('close', function () {
+    content.value.style.pointerEvents = ''
     isOpen.value = false
     pvs = false
   })
