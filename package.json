@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "build-and-commit": "npm run build && git add . && git commit",
+    "build-and-commit": "npm run build && git add . && git commit -m",
     "serve": "vite preview",
     "https-preview": "serve dist",
     "cypress": "cypress run",
