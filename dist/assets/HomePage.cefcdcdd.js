@@ -1,0 +1,1 @@
+import{d as s,u as o,c,a as n,b as r,t as m,e as u,o as l}from"./index.40d1e8f4.js";const p={key:0},d=s({name:"HomePage",setup(i){const{accounts:t}=o(),a=c(()=>{if(t.value.length>0){const e=t.value[0].name;if(e)return e.split(" ")[0]}return""});return(e,_)=>n(a)?(l(),r("span",p,"Welcome, "+m(n(a)),1)):u("",!0)}});export{d as default};

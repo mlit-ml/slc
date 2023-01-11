@@ -45,7 +45,7 @@
                 href="#"
                 class="w-full flex items-center justify-center py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                <span>{{ $t('0 changes') }}</span>
+                <span>{{ '0' + ' ' + $t('changes') }}</span>
               </a>
               <!-- <p class="mt-6 text-center text-base font-medium text-gray-500">
                 Existing customer?
@@ -292,7 +292,6 @@ function toggleMenu() {
     slideout.value?.toggle()
   }
   isOpen.value = !isOpen.value
-  CrossPlatformHelper.clickVibrate()
 }
 
 function panelClicked(e: MouseEvent) {
