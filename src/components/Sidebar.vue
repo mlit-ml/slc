@@ -235,6 +235,8 @@ import { onMounted } from 'vue'
 import { useMsal } from '../auth/useMsal'
 import PageHistory from '../types/PageHistory'
 
+import CrossPlatformHelper from '../helpers/crossPlatformHelper'
+
 const { instance } = useMsal()
 
 const props = defineProps<{
@@ -290,6 +292,7 @@ function toggleMenu() {
     slideout.value?.toggle()
   }
   isOpen.value = !isOpen.value
+  CrossPlatformHelper.clickVibrate()
 }
 
 function panelClicked(e: MouseEvent) {
