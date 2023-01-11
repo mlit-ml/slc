@@ -11,7 +11,7 @@ export default class CrossPlatformHelper {
     if (!window.navigator.vibrate) {
       return
     }
-
+    console.log('VIBRATE')
     window.navigator.vibrate(100)
   }
 }
